@@ -1,0 +1,50 @@
+{
+	"chain": {
+		"info-json": "[{\"chain-id\":13863860,\"parent-chain-id\":1,\"chain-name\":\"symbiosis359\",\"chain-config\":{\"chainId\":13863860,\"homesteadBlock\":0,\"daoForkBlock\":null,\"daoForkSupport\":true,\"eip150Block\":0,\"eip150Hash\":\"0x0000000000000000000000000000000000000000000000000000000000000000\",\"eip155Block\":0,\"eip158Block\":0,\"byzantiumBlock\":0,\"constantinopleBlock\":0,\"petersburgBlock\":0,\"istanbulBlock\":0,\"muirGlacierBlock\":0,\"berlinBlock\":0,\"londonBlock\":0,\"clique\":{\"period\":0,\"epoch\":0},\"arbitrum\":{\"EnableArbOS\":true,\"AllowDebugPrecompiles\":false,\"DataAvailabilityCommittee\":false,\"InitialArbOSVersion\":32,\"Celestia\":false,\"InitialChainOwner\":\"0x1c47f6ff553d9d972db695326fd4a839c0daa487\",\"GenesisBlockNum\":0}},\"rollup\":{\"bridge\":\"0xE61FBe55EC57394B02BDB6a88c3D71ADb2d63826\",\"inbox\":\"0x3ad488cD8b0705B6Ede84c275f764541ab9B36AD\",\"sequencer-inbox\":\"0xa150Ff19A31E1054f950098869834afFe9bC6fdC\",\"rollup\":\"0x2d16B1CA78079A1C3e79c93d017558c7d685E57f\",\"validator-utils\":\"0x59E12ED1f3944A6f7aabA9Bd60b51ca5A082D10d\",\"validator-wallet-creator\":\"0x160703c2a2f17215dBcAE8eE43be808c1c093Ce6\",\"deployed-at\":22824054}}]",
+		"name": "symbiosis359"
+	},
+	"execution": {
+		"caching": { "archive": true },
+		"sequencer": {
+			"enable": false,
+			"max-block-speed": "250ms",
+			"max-tx-data-size": 75000
+		}
+	},
+	"http": {
+		"addr": "0.0.0.0",
+		"api": ["eth", "net", "web3", "arb", "debug", "txpool"],
+		"corsdomain": "*",
+		"port": 8545,
+		"vhosts": "*"
+	},
+	"metrics-server": { "addr": "0.0.0.0", "port": 6070 },
+	"node": {
+		"batch-poster": { "enable": false, "max-size": 80000 },
+		"dangerous": { "no-sequencer-coordinator": false },
+		"delayed-sequencer": { "enable": false },
+		"feed": { "output": { "enable": false, "port": 9642 } },
+		"seq-coordinator": {
+			"enable": false,
+			"lockout-duration": "30s",
+			"lockout-spare": "1s",
+			"my-url": "",
+			"redis-url": "",
+			"retry-interval": "0.5s",
+			"seq-num-duration": "24h0m0s",
+			"update-interval": "3s"
+		},
+		"sequencer": false,
+		"staker": { "enable": false, "strategy": "MakeNodes" }
+	},
+	"parent-chain": {
+		"connection": {
+			"url": "http://l1-proxy:8080"
+		}
+	},
+	"ws": {
+		"addr": "0.0.0.0",
+		"api": ["eth", "net", "web3", "arb", "txpool"],
+		"port": 8546
+	}
+}
