@@ -6,7 +6,7 @@ services:
       - "8546:8546"
     volumes:
       - "./nodeConfig.json:/config/nodeConfig.json"
-      - ${L2_DATA}:/home/user/.arbitrum
+      - ${L2_DATA:-./data}:/home/user/.arbitrum
     entrypoint:
       - "/usr/local/bin/nitro"
       - --conf.file=/config/nodeConfig.json
